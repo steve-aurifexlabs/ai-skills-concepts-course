@@ -1,5 +1,7 @@
 # AI in 2023: Skills and Concepts
 
+[Sign up for the course here!](https://aurifexlabs.com)
+
 ## Table of Contents
 
 - [Modeling using Deep Neural Networks in PyTorch](#modeling-using-deep-neural-networks-in-pytorch)
@@ -25,12 +27,12 @@
 
 ### Code
 
-[Lesson](energy/energy-lesson.py)
-[Reference](energy/energy-ref.py)
+- [Lesson](energy/energy-lesson.py)
+- [Reference](energy/energy-ref.py)
 
 ### Links
 
-[Install Pytorch](https://pytorch.org/get-started/locally/)
+- [Install Pytorch](https://pytorch.org/get-started/locally/)
 
 ### Assignments
 
@@ -74,15 +76,15 @@
 
 ### Code
 
-[Shap / XGBoost Lesson](energy/bonus/energy-shap-xgboost.py)
+- [Shap / XGBoost Lesson](energy/bonus/energy-shap-xgboost.py)
 
 ### Links
 
-[Main Lesson Source](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%C2%A0insights.html)
+- [Main Lesson Source](https://shap.readthedocs.io/en/latest/example_notebooks/overviews/Be%20careful%20when%20interpreting%20predictive%20models%20in%20search%20of%20causal%C2%A0insights.html)
 
-[XGBoost Background](https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/)
+- [XGBoost Background](https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/)
 
-[Machine Vison Example](https://shap.readthedocs.io/en/latest/example_notebooks/image_examples/image_classification/PyTorch%20Deep%20Explainer%20MNIST%20example.html)
+- [Machine Vison Example](https://shap.readthedocs.io/en/latest/example_notebooks/image_examples/image_classification/PyTorch%20Deep%20Explainer%20MNIST%20example.html)
 
 ### Assignments
 - Analyze the model you created using your own data using SHAP
@@ -98,7 +100,7 @@
 
 ### Code
 
-[Tic Tac Toe](tictactoe/tictactoe.py)
+- [Tic Tac Toe](tictactoe/tictactoe.py)
 
 ### Links
 
@@ -137,7 +139,7 @@
 
 ### Code
 
-[PyTorch Tutorial: Transfer Learning](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html)
+- [PyTorch Tutorial: Transfer Learning](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html)
 
 ### Links
 
@@ -164,8 +166,8 @@
 
 ### Code
 
-[PyTorch DCGAN Tutorial](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html)
-[Datasets](dcgan/datasets/)
+- [PyTorch DCGAN Tutorial](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html)
+- [Datasets](dcgan/datasets/)
 
 ### Links
 
@@ -192,7 +194,7 @@
 
 ### Code
 
-[Word Embeddings: Encoding Lexical Semantics](https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html?highlight=embeddings)
+- [Word Embeddings: Encoding Lexical Semantics](https://pytorch.org/tutorials/beginner/nlp/word_embeddings_tutorial.html?highlight=embeddings)
 
 ### Links
 
@@ -233,14 +235,14 @@
 
 ### Code
 
-[LLaMa Source Code](https://github.com/facebookresearch/llama/blob/main/llama/model.py)
+- [LLaMa Source Code](https://github.com/facebookresearch/llama/blob/main/llama/model.py)
 
 ### Links
 
-[LLaMa Paper](https://arxiv.org/abs/2302.13971)
-[OpenLLaMA on HuggingFace](https://huggingface.co/openlm-research/open_llama_3b)
-[MPT-7B Details](https://www.mosaicml.com/blog/mpt-7b)
-[MPT-7B on HuggingFace](https://huggingface.co/mosaicml/mpt-7b)
+- [LLaMa Paper](https://arxiv.org/abs/2302.13971)
+- [OpenLLaMA on HuggingFace](https://huggingface.co/openlm-research/open_llama_3b)
+- [MPT-7B Details](https://www.mosaicml.com/blog/mpt-7b)
+- [MPT-7B on HuggingFace](https://huggingface.co/mosaicml/mpt-7b)
 
 ### Assignments
 
