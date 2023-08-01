@@ -1,0 +1,45 @@
+<canvas width="64" height="64"></canvas>
+<style>
+    canvas {
+        border: 1px solid black;
+    }
+
+</style>
+<script>
+    var canvas = document.querySelector('canvas')
+    var c = canvas.getContext('2d')
+
+    function genImage() {
+        c.clearRect(0, 0, canvas.width, canvas.height)
+        min = 3
+        max = 5
+
+        n = min + Math.random() * (max - min)
+
+        for(var i = 0; i < n; i++) {
+            var color = Math.random()
+            if(color > 0.5) {
+                c.fillStyle = 'red'
+            } else if(color > 0.25) {
+                c.fillStyle = 'green'
+            } else {
+                c.fillStyle = 'blue'
+            }
+
+            size = 5 + Math.random() * 15
+            x = Math.random() * canvas.width
+            y = Math.random() * canvas.height
+            
+            c.fillRect(x, y, size, size)
+        }
+
+        canvas.toBlob(function(blob) {
+            console.log(blob)
+            
+        })
+
+    }
+
+    genImage()
+
+</script>

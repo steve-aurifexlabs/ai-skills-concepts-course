@@ -1,0 +1,245 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+<style>
+    canvas {
+        border: 1px solid #888;
+        height: 800px;
+    }
+    
+    .code, .equations {
+        border: 1px solid #888;
+        padding: 20px;
+    }
+
+    .code {
+        font-size: 18px;
+    }
+
+    .top {
+        display: flex;
+    }
+
+    h2 {
+        text-decoration: underline;
+    }
+</style>
+
+<h1>Tic Tac Toe Winner Predictor</h1>
+
+<div class="top">
+<div class="code">
+<h2>Simplified PyTorch Code</h2>
+    
+<pre>model = nn.Sequential(
+    nn.Linear(27, 10),
+    nn.ReLU(),
+    nn.Linear(10, 3)
+)
+
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+
+while True:
+    inputs, actual_outputs = prepare_sample(generate_sample())
+    optimizer.zero_grad()
+    predicted_outputs = model(inputs)
+    loss = criterion(predicted_outputs, actual_outputs)
+    loss.backward()
+    optimizer.step()
+</pre>
+</div>
+
+<div class="equations">
+    <h2>Equations</h2>
+    
+    <h3>Linear (or Fully Connected) Layer</h3>
+    <p>𝑦 = 𝑤𝑥 + 𝑏</p>
+
+    <h3>Activation Layer (ReLU)</h3>
+    <p>𝑦 = { 0 if 𝑥 < 0, 𝑥 if 𝑥 >= 0 }</p>
+
+    <h3>Cross Entropy Loss</h3>
+    <p>L(pred, actual) = -∑<sub>c</sub> (actual<sub>c</sub> * log(pred<sub>c</sub>) )</p>
+
+    <h3>Chain Rule</h3>
+    <p>𝝏loss / 𝝏𝑤<sub>b</sub> = (𝝏loss / 𝝏𝑤<sub>a</sub> ) * (𝝏𝑤<sub>a</sub> / 𝝏𝑤<sub>b</sub>)</p>
+
+    <h3>Stochastic Gradient Descent</h3>
+    <p>𝑤<sub>𝑖+1</sub> = 𝑤<sub>𝑖</sub> - 𝜀 ( 𝝏loss / 𝝏𝑤<sub>𝑖</sub> )</p>
+    
+</div>
+</div>
+<canvas width="4000" height="900"></canvas>
+
+<script type="module">
+    var canvas = document.querySelector('canvas')
+    var c = canvas.getContext('2d')
+
+    var log = await (await fetch('log.json')).json()
+
+    var index = 0
+
+    setInterval(function() {
+        index += 1
+        tick()
+    }, 50)
+
+    function tick() {
+        if(index >= log.length / 3) {
+            return
+        }
+
+        c.clearRect(0, 0, canvas.width, canvas.height)
+
+        c.fillStyle = '#000'
+        c.font = '25px serif'
+
+        c.fillText('Input', 20, 30)
+        c.fillText('Weights', 650, 30)
+        c.fillText('Biases', 1575, 30)
+        c.fillText('Intermediate Value', 1750, 30)
+        c.fillText('ReLU', 2000, 30)
+        c.fillText('Intermediate Value', 2200, 30)
+        c.fillText('Weights', 2700, 30)
+        c.fillText('Biases', 3200, 30)
+        c.fillText('Predicted', 3400, 30)
+        c.fillText('Actual', 3600, 30)
+        c.fillText('Loss', 3800, 30)
+
+        var input = log[index * 3].x[0]
+        input.forEach(function(value, i) {
+            if(value <= 0) {
+                c.fillStyle = '#888'
+            } else {
+                c.fillStyle = '#000'
+            }
+
+            c.font = '15px serif'
+            c.fillText(value.toFixed(2), 20, 50 + 25 * i + 20 * Math.floor(i / 3))
+        })
+        
+        var linear1Out = log[index * 3].y[0]
+        // console.log(linear1Out)
+        linear1Out.forEach(function(value, i) {
+            if(value > 0) {
+                c.fillStyle = '#0f0'
+            } else {
+                c.fillStyle = '#f00'
+            }
+
+            c.font = Math.abs(value) * 50 + 'px serif'
+
+            c.fillText(value.toFixed(2), 1800, 250 + 30 * i)
+        })
+
+        var linear2In = log[index * 3 + 1].x[0]
+        linear2In.forEach(function(value, i) {
+            if(value > 0) {
+                c.fillStyle = '#0f0'
+            } else {
+                c.fillStyle = '#f00'
+            }
+
+            c.font = Math.abs(value) * 50 + 'px serif'
+
+            c.fillText(value.toFixed(2), 2250, 250 + 30 * i)
+        })
+
+        var output = log[index * 3 + 1].y[0]
+        output.forEach(function(value, i) {
+            if(value > 0) {
+                c.fillStyle = '#0f0'
+            } else {
+                c.fillStyle = '#f00'
+            }
+
+            c.font = Math.abs(value) * 50 + 'px serif'
+
+            c.fillText(value.toFixed(2), 3400, 250 + 30 * i)
+        })
+
+        var data = log[index * 3 + 2]
+        
+        
+        var weightMatrix = data.start_parameters[0]
+        weightMatrix.forEach(function(row, i) {
+            row.forEach(function(scalar, j) {
+                if(scalar > 0) {
+                    c.fillStyle = '#0f0'
+                } else {
+                    c.fillStyle = '#f00'
+                }
+
+                c.font = Math.abs(scalar) * 50 + 'px serif'
+
+                c.fillText(scalar.toFixed(2), 120 + 50 * j, 250 + 30 * i)
+            })
+        })
+
+        var biasesVector = data.start_parameters[1]
+        biasesVector.forEach(function(scalar, i) {
+            if(scalar > 0) {
+                c.fillStyle = '#0f0'
+            } else {
+                c.fillStyle = '#f00'
+            }
+
+            c.font = Math.abs(scalar) * 50 + 'px serif'
+
+            c.fillText(scalar.toFixed(2), 1600, 250 + 30 * i)
+        })
+
+        var weightMatrix = data.start_parameters[2]
+        weightMatrix.forEach(function(row, i) {
+            row.forEach(function(scalar, j) {
+                if(scalar > 0) {
+                    c.fillStyle = '#0f0'
+                } else {
+                    c.fillStyle = '#f00'
+                }
+
+                c.font = Math.abs(scalar) * 50 + 'px serif'
+
+                c.fillText(scalar.toFixed(2), 2500 + 50 * j, 250 + 30 * i)
+            })
+        })
+
+        var biasesVector = data.start_parameters[3]
+        biasesVector.forEach(function(scalar, i) {
+            if(scalar > 0) {
+                c.fillStyle = '#0f0'
+            } else {
+                c.fillStyle = '#f00'
+            }
+
+            c.font = Math.abs(scalar) * 50 + 'px serif'
+
+            c.fillText(scalar.toFixed(2), 3200, 250 + 30 * i)
+        })
+
+
+        data.actual_outputs[0].forEach(function(scalar, i) {
+            if(scalar <= 0) {
+                c.fillStyle = '#888'
+            } else {
+                c.fillStyle = '#000'
+            }
+
+            c.font = '15px serif'
+
+            c.fillText(scalar.toFixed(2), 3600, 250 + 30 * i)
+        })
+
+        c.fillStyle = '#000'
+        c.font = '25px serif'
+        c.fillText(data.loss.toFixed(2), 3800, 250)
+    }
+
+    tick()
+</script>
+
+</body>

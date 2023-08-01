@@ -1,0 +1,45 @@
+<canvas width="64" height="64"></canvas>
+<style>
+    canvas {
+        border: 1px solid black;
+    }
+
+</style>
+<script>
+    var canvas = document.querySelector('canvas')
+    var c = canvas.getContext('2d')
+
+    function genImage() {
+        c.clearRect(0, 0, canvas.width, canvas.height)
+        min = 3
+        max = 5
+
+        n = min + Math.random() * (max - min)
+
+        for(var i = 0; i < 1; i++) {
+            var color = Math.random()
+            c.fillStyle = 'black'
+            c.font = '16px serif'
+
+            size = 5 + Math.random() * 15
+            x = Math.round(Math.random() * canvas.width)
+            y = Math.round(Math.random() * canvas.height)
+            
+            c.fillText(x.toString(), 5, 16)
+            c.fillText(y.toString(), 34, 16)
+            c.fillStyle = 'green'
+            c.fillText((x + y).toString(), 5, 48)
+            c.fillStyle = 'red'
+            c.fillText((x - y).toString(), 34, 48)
+        }
+
+        canvas.toBlob(function(blob) {
+            console.log(blob)
+            
+        })
+
+    }
+
+    genImage()
+
+</script>
