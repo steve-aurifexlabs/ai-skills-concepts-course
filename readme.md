@@ -2,16 +2,84 @@
 
 [Sign up for the course here!](https://aurifexlabs.com)
 
-## Table of Contents
+## Course Map
 
-- [Modeling using Deep Neural Networks in PyTorch](#modeling-using-deep-neural-networks-in-pytorch)
-- [Bonus: Shap / XGBoost](#bonus-shap--xgboost)
-- [Training, Classification, and Decision Trees: Tic-Tac-Toe](#training-classification-and-decision-trees-tic-tac-toe)
-- [Convolutional Neural Nets and Transfer Learning: Image Classification](#convolutional-neural-nets-and-transfer-learning-image-classification)
-- [Generative Adversarial Networks (DCGAN): Image Generator I](#generative-adversarial-networks-dcgan-image-generator-i)
-- [Embeddings: Dense Vector Representations of Semantic Information](#embeddings-dense-vector-representations-of-semantic-information)
-- [Transformers I: Overview of Self-Attention](#transformers-i-overview-of-self-attention)
-- [Transformers II: Explore LLaMa Source Code](#transformers-ii-explore-llama-source-code)
+### Project Flow
+
+### LLM workflow
+
+### Concepts
+
+- Basics of Neural Networks
+- Training Deep Neural Networks using Stochastic Gradient Descent
+- Using PyTorch
+- Convolutional Neural Networks
+- Embeddings
+- Recurrent Neural Networks
+- ML Hardware
+
+Core:
+- Transformer Architecture (heart of an LLM)
+- Generative Adversarial Networks and Autoencoders
+- Stable Diffusion
+- Reinforcement Learning
+- Transfer Learning and Fine Tuning
+- Few-Shot and Zero-Shot Learning
+- Training with Data and Model Parallelism
+- Prompt Engineering
+- Using LangChain
+
+Current State of the Art:
+- What comes after Self-Attention?
+- Multi-Modal and Augmented Transformers
+- Autonomous Agents
+- Intelligence? (discussion)
+
+### Skills
+
+#### ML development environment
+
+- PyTorch local
+- OpenAI playground
+
+#### PyTorch
+
+-
+-
+
+- Train small models from scratch to develop a confidence in understanding stochastic gradient descent 
+
+- Learn production ready natural language processing and machine vision techniques 
+
+- Use transfer learning to quickly adapt an existing model to your needs
+
+- Practice hyperparameter tuning
+
+- Learn how Reinforcement Learning (RL), Generative Adversarial Networks (GAN), and Autoencoders can be used in practice
+
+- Design and run a small ML research experiment
+
+- Use cloud based TPUs to train a larger network in parallel
+
+- Use LangChain to "close the loop" on LLMs and super-charge your productivity
+
+### Objectives
+
+- Develop a confident, deep understanding of training and stochastic gradient descent
+
+- Hands-on experience writing training loops with PyTorch
+
+- Comprehensive treatment of every major neural net architecture and technique currently being used
+
+- Develop a high level mental model of how ML hardware influences neural net design
+
+- Hands-on experience using LangChain to build on existing LLMs
+
+- Overview of the current research that will extend LLMs even further
+
+
+
+
 
 ## Links
 
@@ -22,6 +90,19 @@
 - [LangChain Docs](https://python.langchain.com/docs/get_started/introduction.html)
 - [SHAP Docs](https://shap.readthedocs.io/en/latest/index.html)
 - [MarkTechPost (AI news/papers)](https://www.marktechpost.com/)
+
+
+## Lessons
+
+- [Modeling using Deep Neural Networks in PyTorch](#modeling-using-deep-neural-networks-in-pytorch)
+- [Bonus: Shap / XGBoost](#bonus-shap--xgboost)
+- [Training, Classification, and Decision Trees: Tic-Tac-Toe](#training-classification-and-decision-trees-tic-tac-toe)
+- [Convolutional Neural Nets and Transfer Learning: Image Classification](#convolutional-neural-nets-and-transfer-learning-image-classification)
+- [Generative Adversarial Networks (DCGAN): Image Generator I](#generative-adversarial-networks-dcgan-image-generator-i)
+- [Embeddings: Dense Vector Representations of Semantic Information](#embeddings-dense-vector-representations-of-semantic-information)
+- [Transformers I: Overview of Self-Attention](#transformers-i-overview-of-self-attention)
+- [Transformers II: Explore LLaMa Source Code](#transformers-ii-explore-llama-source-code)
+
 
 ## Modeling using Deep Neural Networks in PyTorch
 
@@ -84,7 +165,7 @@
 
 - [XGBoost Background](https://machinelearningmastery.com/gentle-introduction-xgboost-applied-machine-learning/)
 
-- [Machine Vison Example](https://shap.readthedocs.io/en/latest/example_notebooks/image_examples/image_classification/PyTorch%20Deep%20Explainer%20MNIST%20example.html)
+- [Machine Vision Example](https://shap.readthedocs.io/en/latest/example_notebooks/image_examples/image_classification/PyTorch%20Deep%20Explainer%20MNIST%20example.html)
 
 ### Assignments
 - Analyze the model you created using your own data using SHAP

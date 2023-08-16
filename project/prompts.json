@@ -1,0 +1,8 @@
+[
+    "Describe the structure of the data.",
+    "Find 3 examples that appear to be spam.",
+    "What % of bugs involve memory safety or casting?",
+    "Do bugs with nit. or similar corrolate with lower severity?",
+    "Which MiraclePtr implementation would address the most bugs?",
+    "Convert the description field into JSON."
+]
